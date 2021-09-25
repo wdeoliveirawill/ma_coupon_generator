@@ -1,0 +1,1 @@
+web: gunicorn maria_alice_coupon_generator.wsgi:application
