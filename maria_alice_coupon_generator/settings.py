@@ -4,7 +4,7 @@ from dj_database_url import parse as parse_db_url
 from prettyconf import config
 
 BASE_DIR = Path(__file__).absolute().parents[2]
-PROJECT_DIR = Path(__file__).absolute().parents[2]
+PROJECT_DIR = Path(__file__).absolute().parents[1]
 
 SECRET_KEY = config("SECRET_KEY", default="yyyyxxxxzzzz", cast=str)
 DEBUG = config("DEBUG", default=False, cast=bool)
@@ -52,7 +52,7 @@ AUTH_USER_MODEL = "custom_user.User"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates"],
+        "DIRS": [PROJECT_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -107,6 +107,7 @@ TIME_ZONE = "America/Sao_Paulo"
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+DATE_FORMAT = "Y-m-d"
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static/")]
 STATIC_URL = "/static/"

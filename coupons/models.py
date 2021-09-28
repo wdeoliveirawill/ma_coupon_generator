@@ -36,3 +36,6 @@ class Coupon(models.Model):
             return base_date.replace(year=base_date.year + years)
         except ValueError:
             return base_date + (date(base_date.year + years, 1, 1) - date(base_date.year, 1, 1))
+
+    def is_expired(self):
+        return self.valid_until < datetime.datetime.today().date()
