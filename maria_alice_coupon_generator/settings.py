@@ -109,10 +109,10 @@ USE_L10N = True
 USE_TZ = True
 DATE_FORMAT = "Y-m-d"
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static/")]
+STATICFILES_DIRS = [os.path.join(PROJECT_DIR, "static/")]
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+MEDIA_ROOT = os.path.join(PROJECT_DIR, "media/")
 
 JAZZMIN_SETTINGS = {
     "site_title": "Maria Alice | Gerador de Cupons",
